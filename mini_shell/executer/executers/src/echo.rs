@@ -8,8 +8,10 @@ The echo command has several options to customize its output:
 */
 // shell/executers/echo.rs
 
-use types::command::*;
+use types::command::Command;
 
-pub fn echo(command: &Command){
- println!("--> {:?} --> {:?} --> {:?}", command.name, command.flags, command.args);
+pub fn echo(command: &Command) {
+    // Joindre tous les arguments avec des espaces et afficher
+    let output = command.args.join(" ");
+    println!("{}", output);
 }
